@@ -1,0 +1,27 @@
+<section class="py-20">
+  <div class="container">
+    <div class="grid grid-cols-12 items-center gap-10">
+      <div class="col-span-3">
+        <img
+          [src]="productDetailsList.imageCover"
+          [alt]="productDetailsList.category.name"
+          class="w-full"
+        />
+      </div>
+      <div class="col-span-9">
+        <h2 class="text-3xl font-bold mb-5 text-green-800">{{ productDetailsList.title }}</h2>
+        <p class="text-xl mb-5">{{ productDetailsList.description }}</p>
+        <span class="text-2xl">{{ productDetailsList.category.name }}</span>
+
+        <div class="flex items-center gap-5 justify-between my-5">
+          <span class="text-xl">{{ productDetailsList.price }}EGP</span>
+          <span class="text-xl"
+            ><i class="fas fa-star text-amber-400"></i>{{ productDetailsList.ratingsAverage }}</span
+          >
+        </div>
+
+        <button (click)="addToCart(productDetailsList._id)" class="btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
