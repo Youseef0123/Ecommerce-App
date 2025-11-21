@@ -57,6 +57,7 @@ export const routes: Routes = [
       },
       {
         path: 'details/:id',
+        data: { renderMode: 'client' },
         loadComponent: () =>
           import('./features/details/details.component').then((c) => c.DetailsComponent),
         title: 'Details',
@@ -69,6 +70,7 @@ export const routes: Routes = [
       },
       {
         path: 'checkout/:id',
+        data: { renderMode: 'client' },
         loadComponent: () =>
           import('./features/checkout/checkout.component').then((c) => c.CheckoutComponent),
         title: 'Checkout',
