@@ -1,0 +1,22 @@
+<section class="border border-gray-300 rounded-lg p-4 shadow-md bg-gray-100 py-16">
+  <div class="container">
+    <h2 class="text-5xl text-green-800">{{ 'products.popularProducts' | translate }}</h2>
+
+    <input
+      type="search"
+      placeholder="{{ 'products.searchPlaceholder' | translate }}"
+      [(ngModel)]="searchTerm"
+      class="w-full p-2 border border-gray-300 rounded-lg mt-10"
+    />
+
+    <div class="parent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+      @for (product of productList() | paginate: { id: 'foo', itemsPerPage: pageSize, currentPage:
+      currentPage, totalItems: total } | filteration: searchTerm; track product.id) {
+      <app-card [product]="product"></app-card>
+      }
+    </div>
+    <div class="flex justify-center mt-8">
+      <pagination-controls id="foo" (pageChange)="getProductsData($event)"> </pagination-controls>
+    </div>
+  </div>
+</section>

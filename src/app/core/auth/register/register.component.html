@@ -1,0 +1,55 @@
+<section class="p-4 md:w-1/2 mx-auto my-14">
+  <h1 class="text-2xl text-gray-800 mb-4 font-semibold">Register Now :</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <app-input
+      [labelInput]="'Name'"
+      [idInput]="'name'"
+      [control]="registerForm.get('name')"
+      [typeInput]="'text'"
+    ></app-input>
+
+    <app-input
+      [labelInput]="'Email'"
+      [idInput]="'email'"
+      [control]="registerForm.get('email')"
+      [typeInput]="'email'"
+    ></app-input>
+
+    <app-input
+      [labelInput]="'Password'"
+      [idInput]="'password'"
+      [control]="registerForm.get('password')"
+    >
+      Custom field should match the pattern
+    </app-input>
+
+    <app-input
+      [labelInput]="'rePassword'"
+      [idInput]="'rePassword'"
+      [control]="registerForm.get('rePassword')"
+    ></app-input>
+
+    <app-input
+      [labelInput]="'Phone'"
+      [idInput]="'phone'"
+      [control]="registerForm.get('phone')"
+      [typeInput]="'tel'"
+    >
+      Accept only Egyptian phone numbers
+    </app-input>
+
+    <div class="mx-auto text-center">
+      <button class="btn w-1/6 mt-4" type="submit">
+        Register @if (isLoading) {
+        <span class="animate-spin">
+          <i class="fas fa-spinner fa-spin"></i>
+        </span>
+        }
+      </button>
+
+      @if (errMshg) {
+      <p class="text-red-500 bg-red-50 mt-4 p-4">{{ errMshg }}</p>
+      }
+    </div>
+  </form>
+</section>

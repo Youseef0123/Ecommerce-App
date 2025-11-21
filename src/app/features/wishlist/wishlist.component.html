@@ -1,0 +1,11 @@
+<section class="border border-gray-300 rounded-lg p-4 shadow-md bg-gray-100 py-16">
+  <div class="container">
+    <h2 class="text-5xl text-green-800">{{ 'wishlist.wishlist' | translate }}</h2>
+
+    <div class="parent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+      @for (product of wishlist(); track product._id) {
+      <app-card [product]="product"></app-card>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<div class="card overflow-hidden group/card cursor-pointer relative">
+  <div>
+    <div class="absolute top-2 right-2">
+      <i (click)="addToWishlist(product._id)" class="fa-regular fa-heart"></i>
+    </div>
+
+    <div [routerLink]="['/details', product._id]">
+      <img [src]="product.imageCover" alt="" class="w-full rounded-t object-contain" />
+      <h3 class="text-green-800 text-md py-2">{{ product.category.name }}</h3>
+      <h4 class="text-lg py-2 line-clamp-1ks">{{ product.title | term : 3 }}</h4>
+      <div class="flex justify-between items-center">
+        <span>{{ product.price | currency : 'EGP' }}</span>
+        <span><i class="fas fa-star text-yellow-500"></i>{{ product.ratingsAverage }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between items-center space-x-2">
+    <button
+      (click)="addProductItemToCart(product._id)"
+      class="btn translate-y-[120%] group-hover/card:translate-y-0"
+    >
+      {{ 'products.addToCart' | translate }}
+    </button>
+    <button
+      (click)="removeFromWishlist(product._id)"
+      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 w-full mt-2"
+    >
+      {{ 'removeFromWishlist' | translate }}
+    </button>
+  </div>
+</div>

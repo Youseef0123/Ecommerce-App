@@ -1,0 +1,75 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "signout": "تسجيل الخروج",
+    "lang": "اللغة",
+    "en": "إنجليزي",
+    "ar": "عربي"
+  },
+
+  "home": {
+    "popularProducts": "المنتجات الشائعة",
+    "popularCategories": "الفئات الشائعة"
+  },
+
+  "products": {
+    "popularProducts": "المنتجات الشائعة",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "addToCart": "أضف إلى السلة",
+    "removeFromWishlist": "إزالة من قائمة الرغبات"
+  },
+
+  "productDetails": {
+    "title": "{{productTitle}}",
+    "description": "{{productDescription}}",
+    "categoryLabel": "الفئة",
+    "ratingsLabel": "التقييمات",
+    "addToCartButton": "أضف إلى السلة"
+  },
+
+  "cart": {
+    "orderSummary": "ملخص الطلب",
+    "totalItems": "إجمالي المنتجات",
+    "totalPrice": "إجمالي السعر",
+    "goToCheckout": "الانتقال إلى الدفع",
+    "removeItem": "حذف المنتج"
+  },
+  "wishlist": {
+    "wishlist": "قائمة الرغبات"
+  },
+
+  "register": {
+    "title": "سجل الآن :",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "rePassword": "إعادة كلمة المرور",
+    "phone": "رقم الهاتف",
+    "phoneNote": "يُقبل أرقام الهاتف المصرية فقط",
+    "passwordNote": "يجب أن تتطابق مع النمط المطلوب",
+    "registerButton": "تسجيل",
+    "loading": "جارٍ التحميل...",
+    "errorMessage": "حدث خطأ"
+  },
+  "login": {
+    "loginNow": "سجّل دخولك الآن",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "signIn": "تسجيل الدخول"
+  },
+
+  "footer": {
+    "getApp": "قم بتحميل تطبيق FreshCart",
+    "sendLinkMsg": "سنرسل لك رابطًا، افتحه على هاتفك لتحميل التطبيق",
+    "emailPlaceholder": "البريد الإلكتروني...",
+    "shareAppLink": "مشاركة رابط التطبيق",
+    "paymentPartners": "شركاء الدفع",
+    "getDeliveries": "احصل على التوصيل من خلال FreshCart"
+  }
+}

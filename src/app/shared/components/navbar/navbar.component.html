@@ -1,0 +1,224 @@
+<nav class="bg-gray-100 border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <!-- Logo -->
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/images/freshcart-logo.svg" alt="fresh cart" />
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+
+    <!-- Navbar -->
+    <div class="hidden grow w-full md:flex md:w-auto" id="navbar-default">
+      <!-- Left menu -->
+      @if (isLogin) {
+      <ul
+        class="font-medium ms-4 flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      >
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.home' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/products"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.products' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/categories"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.categories' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/brands"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.brands' | translate }}</a
+          >
+        </li>
+      </ul>
+      }
+
+      <!-- Right menu -->
+      <ul
+        class="font-medium ms-auto flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      >
+        <!-- Language Dropdown -->
+        <!-- Language Dropdown -->
+        <li>
+          <button
+            id="dropdownNvbarButton"
+            data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 px-3 rounded-sm text-gray-700 hover:text-green-800 transition-colors duration-200 font-medium text-heading md:w-auto hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+          >
+            {{ 'navbar.lang' | translate }}
+            <svg
+              class="w-4 h-4 ms-1.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 9-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbar"
+            class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+          >
+            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownNvbarButton">
+              @if (currentLang('ar')) {
+              <li>
+                <a
+                  href="#"
+                  role="button"
+                  (click)="changeLan('en')"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                >
+                  {{ 'navbar.en' | translate }}
+                </a>
+              </li>
+              } @if (currentLang('en')) {
+              <li>
+                <a
+                  href="#"
+                  role="button"
+                  (click)="changeLan('ar')"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                >
+                  {{ 'navbar.ar' | translate }}
+                </a>
+              </li>
+              }
+            </ul>
+          </div>
+        </li>
+
+        <!-- Social icons -->
+        <li class="flex items-center space-x-2">
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+
+        <!-- Auth links -->
+        @if (!isLogin) {
+        <li>
+          <a
+            routerLink="/login"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.login' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/register"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200"
+            aria-current="page"
+            >{{ 'navbar.register' | translate }}</a
+          >
+        </li>
+        } @else {
+
+        <li>
+          <a
+            routerLink="/wishlist"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block relative py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200 text-2xl"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <span
+              class="absolute -top-3 -right-2 bg-green-800 text-white text-xs font-semibold rounded-full w-4 h-5 flex items-center justify-center"
+              >{{ countWishlist() }}</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/cart"
+            routerLinkActive="text-white bg-green-700 md:bg-transparent md:text-green-700"
+            class="block relative py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200 text-2xl"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span
+              class="absolute -top-3 -right-2 bg-green-800 text-white text-xs font-semibold rounded-full w-4 h-5 flex items-center justify-center"
+              >{{ count() }}</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="signOut()"
+            class="block py-2 px-3 rounded-sm md:p-0 text-gray-700 hover:text-green-800 transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >{{ 'navbar.signout' | translate }}</a
+          >
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,73 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "login": "Login",
+    "register": "Register",
+    "signout": "Sign Out",
+    "lang": "Lang",
+    "en": "EN",
+    "ar": "AR"
+  },
+  "home": {
+    "popularProducts": "Popular Products",
+    "popularCategories": "Popular Categories"
+  },
+
+  "products": {
+    "popularProducts": "Popular Products",
+    "searchPlaceholder": "Search Products...",
+    "addToCart": "Add to Cart",
+    "removeFromWishlist": "Remove from Wishlist"
+  },
+
+  "productDetails": {
+    "title": "{{productTitle}}",
+    "description": "{{productDescription}}",
+    "categoryLabel": "Category",
+    "ratingsLabel": "{{productRatings}}",
+    "addToCartButton": "Add to Cart"
+  },
+
+  "cart": {
+    "orderSummary": "Order Summary",
+    "totalItems": "Total Items",
+    "totalPrice": "Total Price",
+    "goToCheckout": "Go to Checkout"
+  },
+
+  "wishlist": {
+    "wishlist": "Wishlist"
+  },
+  "register": {
+    "title": "Register Now :",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "rePassword": "Re-enter Password",
+    "phone": "Phone",
+    "phoneNote": "Accept only Egyptian phone numbers",
+    "passwordNote": "Custom field should match the pattern",
+    "registerButton": "Register",
+    "loading": "Loading...",
+    "errorMessage": "An error occurred"
+  },
+  "login": {
+    "loginNow": "Login Now",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "signIn": "Sign In"
+  },
+
+  "footer": {
+    "getApp": "Get The FreshCart App",
+    "sendLinkMsg": "We will send you a link, open it on your phone to download the app",
+    "emailPlaceholder": "Email...",
+    "shareAppLink": "Share App Link",
+    "paymentPartners": "Payment Partners",
+    "getDeliveries": "Get Deliveries with FreshCart"
+  }
+}

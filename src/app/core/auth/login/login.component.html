@@ -1,0 +1,35 @@
+<section class="p-4 md:w-1/2 mx-auto my-14">
+  <h1 class="text-2xl text-gray-800 mb-4">{{ 'login.loginNow' | translate }}</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <app-input
+      [labelInput]="'login.email' | translate"
+      [idInput]="'email'"
+      [control]="loginForm.get('email')"
+      [typeInput]="'email'"
+    ></app-input>
+
+    <app-input
+      [labelInput]="'login.password' | translate"
+      [idInput]="'password'"
+      [control]="loginForm.get('password')"
+    ></app-input>
+
+    <div class="mx-auto text-center">
+      <div class="flex justify-end">
+        <a routerLink="/forgot">
+          <p class="text-blue-600 underline">Forgot Password ?</p>
+        </a>
+      </div>
+      <button class="btn w-1/6 mt-4" type="submit">
+        {{ 'login.signIn' | translate }} @if (isLoading) {
+        <span class="animate-spin">
+          <i class="fas fa-spinner fa-spin"></i>
+        </span>
+        }
+      </button>
+      @if (errMshg) {
+      <p class="text-red-500 bg-red-50 mt-4 p-4">{{ errMshg }}</p>
+      }
+    </div>
+  </form>
+</section>

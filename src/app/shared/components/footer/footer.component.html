@@ -1,0 +1,34 @@
+<footer class="bg-gray-200 py-10">
+  <div class="footer-content w-11/12 mx-auto">
+    <h2 class="m-0 mb-2 text-2xl text-gray-700">{{ 'footer.getApp' | translate }}</h2>
+    <p class="text-gray-500 text-sm">
+      {{ 'footer.sendLinkMsg' | translate }}
+    </p>
+    <div class="footer-form my-5 flex items-center gap-4 text-nowrap">
+      <input
+        type="text"
+        placeholder="{{ 'footer.emailPlaceholder' | translate }}"
+        class="w-full rounded-lg border-gray-300 py-3 focus:outline-green-400"
+      />
+      <button class="bg-green-800 text-white p-3 rounded-md">
+        {{ 'footer.shareAppLink' | translate }}
+      </button>
+    </div>
+    <hr class="my-5 border-gray-300" />
+    <div class="footer-bottom md:flex items-center justify-between my-5">
+      <div class="footer-payments flex items-center gap-2">
+        <h3 class="text-lg m-0 text-gray-700">{{ 'footer.paymentPartners' | translate }}</h3>
+        <img src="/images/amazon-pay.png" class="w-12" alt="Amazon Pay" />
+        <img src="/images/American-Express-Color.png" class="w-12" alt="American Express" />
+        <img src="/images/mastercard.webp" class="w-12" alt="Mastercard" />
+        <img src="/images/paypal.png" class="w-12" alt="Paypal" />
+      </div>
+      <div class="footer-social flex items-center gap-2">
+        <h3 class="text-lg m-0 text-gray-700">{{ 'footer.getDeliveries' | translate }}</h3>
+        <img src="/images/get-apple-store.png" class="w-18" alt="Apple Store" />
+        <img src="/images/get-google-play.png" class="w-18" alt="Google Play" />
+      </div>
+    </div>
+    <hr class="my-0 border-gray-300" />
+  </div>
+</footer>

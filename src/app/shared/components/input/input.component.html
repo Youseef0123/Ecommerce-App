@@ -1,0 +1,79 @@
+<div class="relative mb-3">
+  <div class="relative h-14">
+    @if (element==="input") {
+    <input
+      [class]="{
+        'border-red-700': control?.invalid && control?.touched,
+        'border-green-700': control?.valid
+      }"
+      [formControl]="control"
+      [type]="typeInput || (flag ? 'password' : 'text')"
+      [id]="idInput"
+      class="main-input peer pr-10 mt-10"
+    />
+    } @else if (element==="text") {
+
+    <textarea
+      [class]="{
+        'border-red-700': control?.invalid && control?.touched,
+        'border-green-700': control?.valid
+      }"
+      [formControl]="control"
+      [id]="idInput"
+      class="main-input peer pr-10"
+    >
+    </textarea>
+    }
+
+    <label
+      [class]="{
+        'text-red-700': control?.invalid && control?.touched,
+        'text-green-700': control?.valid
+      }"
+      [for]="idInput"
+      class="main-label"
+    >
+      {{ labelInput }}:
+    </label>
+
+    @if(idInput === 'password'|| idInput === 'rePassword') {
+
+    <span
+      (click)="flag = !flag"
+      class="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 cursor-pointer z-10"
+    >
+      @if (flag) {
+      <i class="fa-regular fa-eye"></i>
+      } @else {
+      <i class="fa-regular fa-eye-slash"></i>
+      }
+    </span>
+
+    }
+  </div>
+
+  @if (control?.errors && control?.touched) {
+  <div
+    class="flex p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 mt-2"
+    role="alert"
+  >
+    <ul class="mt-1.5 ml-4 list-disc list-inside">
+      @if (control?.hasError('required')) {
+      <li>Input is required.</li>
+      } @else if (control?.hasError('pattern')) {
+      <li>
+        <ng-content />
+      </li>
+      } @else if (control?.hasError('minlength')) {
+      <li>Input must be at least 3 characters long.</li>
+      } @else if (control?.hasError('maxlength')) {
+      <li>Input cannot exceed 20 characters.</li>
+      } @else if (control?.hasError('email')) {
+      <li>Please enter a valid email address.</li>
+      } @else if (control?.hasError('mismatch')) {
+      <li>Passwords do not match.</li>
+      }
+    </ul>
+  </div>
+  }
+</div>

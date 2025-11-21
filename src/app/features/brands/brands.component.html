@@ -1,0 +1,16 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 mb-3">
+  @for (brand of brandList(); track brand._id) {
+  <div
+    class="card overflow-hidden group cursor-pointer border rounded-lg shadow hover:shadow-xl hover:scale-105 transition-all duration-200"
+  >
+    <div class="p-3 flex flex-col items-center">
+      <img
+        [src]="brand.image"
+        alt="{{ brand.name }}"
+        class="w-full h-40 object-contain rounded-t"
+      />
+      <h3 class="text-green-800 text-lg font-medium mt-2 text-center">{{ brand.name }}</h3>
+    </div>
+  </div>
+  }
+</div>
